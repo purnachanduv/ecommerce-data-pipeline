@@ -1,4 +1,10 @@
+
 import csv
+from logger_config import logger
+
+logger.info("Starting data cleaning process")
+
+processed_rows = 0
 
 with open("data/orders.csv", "r") as input_file:
     reader = csv.DictReader(input_file)
@@ -14,7 +20,6 @@ with open("data/orders.csv", "r") as input_file:
         ]
 
         writer = csv.DictWriter(output_file, fieldnames=fieldnames)
-
         writer.writeheader()
 
         for row in reader:
@@ -31,3 +36,11 @@ with open("data/orders.csv", "r") as input_file:
                 "price": price,
                 "total_amount": total_amount
             })
+
+            processed_rows += 1
+
+logger.info(
+    "Data cleaning completed. Rows processed: %s",
+    processed_rows
+)
+

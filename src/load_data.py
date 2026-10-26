@@ -2,6 +2,7 @@ import csv
 import psycopg
 from pathlib import Path
 from decimal import Decimal
+from logger_config import logger
 
 project_folder = Path(__file__).resolve().parent.parent
 csv_file = project_folder / "data" / "cleaned_orders.csv"
@@ -13,6 +14,7 @@ user="postgres",
 password=input("Enter PostgreSQL password: ")
 ) as connection:
     print("Database connection successful!")
+    logger.info("Database connection successful")
 
 
     with open(csv_file, "r", newline="") as file:
@@ -57,6 +59,8 @@ password=input("Enter PostgreSQL password: ")
             )
 
             print(f"Loaded order: {order_id}")
+            logger.info("Loaded order: %s", order_id)
 
     print("All orders loaded successfully!")
+    logger.info("All orders loaded successfully")
 
