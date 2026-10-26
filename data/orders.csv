@@ -1,0 +1,11 @@
+order_id,customer_name,product,quantity,price
+1001,Rahul,Laptop,1,800
+1002,Priya,Mouse,2,25
+1003,Rahul,Keyboard,1,50
+1004,Arjun,Monitor,1,250
+1005,Priya,Laptop,1,800
+1006,Neha,Mouse,3,25
+1007,Rahul,Headphones,2,60
+1008,Arjun,Keyboard,1,50
+1009,Neha,Laptop,1,800
+1010,Priya,Monitor,2,250
